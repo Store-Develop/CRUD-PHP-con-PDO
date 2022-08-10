@@ -9,9 +9,18 @@
 <body>
     <?php
 
-        print "Bienvenida al Curso de PHP<br>";
-        print "Hola Mundo<br>";
-        print "Continuará...";
+        $nombre= "Juan";
+
+        function dameNombre(){
+            //variabe de ambito global (global $nombre;)
+            global $nombre;
+            //variable de ambito local($nombre)
+            $nombre = "El nombre es: " . $nombre;
+        }
+
+        dameNombre();
+
+        echo  $nombre;
 
     ?>
 </body>
