@@ -8,20 +8,21 @@
 </head>
 <body>
     <?php
+        function incrementaVariable(){
+            static $contador = 0;// variable estatica, se ejecuta solo la primera vez que se llama la función y el valor se conserva al finalizar la función.
 
-        $nombre= "Juan";
+            $contador += 1;
 
-        function dameNombre(){
-            //variabe de ambito global (global $nombre;)
-            global $nombre;
-            //variable de ambito local($nombre)
-            $nombre = "El nombre es: " . $nombre;
+            echo $contador . "<br>";
         }
 
-        dameNombre();
+        incrementaVariable();
+        incrementaVariable();
 
-        echo  $nombre;
-
+        incrementaVariable();
+        incrementaVariable();
+        incrementaVariable();
+        
     ?>
 </body>
 </html>
