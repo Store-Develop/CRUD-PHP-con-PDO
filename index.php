@@ -4,49 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="" href="./css/estilos.css">
     <title>Document</title>
-    <style>
-
-        .resaltar{
-            color: red;
-            font-weight: bold;
-        }
-
-    </style>
+    
 </head>
 <body>
-    <?php
-    $nombre = "Juan";
+    <h1>Usando Operadores de compararción</h1>
+    <form action="" method="POST" name="datos_usuario" id="datos_usuario">
+        <table width="15%" align="center">
+            <tr>
+                <td>Nombre:</td>
+                <td>
+                    <label for="nombre_usuario"></label>
+                    <input type="text" name="nombre_usuario" id="nombre_usuario">
+                </td>
+                
+            </tr>
+            <tr>
+            <td>Edad:</td>
+            <td>
+                    <label for="edad_usuario"></label>
+                    <input type="text" name="edad_usuario" id="edad_usuario">
+            </td>
 
-        echo "nombre $nombre";
-        echo "<p class='resaltar'>Esto es un ejemplo de frase</p>";
-        //echo '<p class="resaltar">Esto es un ejemplo de frase</p>'
-        // echo "<p class=\'resaltar\'>Esto es un ejemplo de frase</p>" // escapar string
-
-        //Comparación de string 
-
-        $variable1="casa";
-        $variable2="CASA";
-        $resultado=strcmp($variable1, $variable2); // devuelve 1 si no son iguales y 0 sin iguales.
-        //strcmp($variable1, $variable2); compara teniendo en cuenta las mayuscalas y minusculas.
-        //echo "El resultado es: $resultado";
-        $resultado2=strcasecmp($variable1, $variable2); // devuelve 1 si no son iguales y 0 sin iguales.
-        //strcasecmp($variable1, $variable2); compara sin tener en cuenta las mayuscalas y minusculas.
-        //echo "<br>Con strcasecmp el resultado es: $resultado2";
-
-        if($resultado === 0){
-            echo "La variable #1 con el valor de $variable1 y la variable #2 con el valor de $variable2 ¡SON IGUALES<br>";
-        }else {
-            echo "La variable #1 con el valor de $variable1 y la variable #2 con el valor de $variable2 ¡NO SON IGUALES<br>";
-        }
-
-        if ($resultado2 === 0) {
-            echo "La variable #1 con el valor de $variable1 y la variable #2 con el valor de $variable2 ¡SIGNIFICAN LO MISMO Y NO ESTAN ESCRITAS IGUAL.<br>";
-        }else {
-            echo "La variable #1 con el valor de $variable1 y la variable #2 con el valor de $variable2 ¡NO SON IGUALES";
-        }
-
-
-    ?>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2"  align="center"><input type="submit" name="enviado" id="enviado" value="Enviar"></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>
