@@ -9,11 +9,11 @@ table{
 }
 .no_validado{
     font-size: 18px;
-    color: f00;
+    color: #f00;
     font-weight:bold;
 }
 .validado{
     font-size: 18px;
-    color: 0c3;
+    color: #0c3;
     font-weight:bold;
 }
