@@ -4,58 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="" href="./css/estilos.css">
+    <link rel="stylesheet" href="css/estilos.css" type="text/css">
     <title>Document</title>
     
 </head>
 <body>
-    <h1>Usando Operadores de compararción</h1>
-    <form action="" method="POST" name="datos_usuario" id="datos_usuario">
-        <table width="15%" align="center">
-            <tr>
-                <td>Nombre:</td>
-                <td>
-                    <label for="nombre_usuario"></label>
-                    <input type="text" name="nombre_usuario" id="nombre_usuario">
-                </td>
-                
-            </tr>
-            <tr>
-            <td>Edad:</td>
-            <td>
-                    <label for="edad_usuario"></label>
-                    <input type="text" name="edad_usuario" id="edad_usuario">
-            </td>
-
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td colspan="2"  align="center"><input type="submit" name="enviado" id="enviado" value="Enviar"></td>
-            </tr>
-        </table>
+    <form nema="form1" method="POST" action="">
+        <p>
+        <label for="num1"></label>
+        <input type="number" name="num1" id="num1"/>
+        <label for="num2"></label>
+        <input type="number" name="num2" id="num2"/>
+        <label for="operacion"></label>
+        <select name="operacion" id="operacion">
+            <option>Suma</option>
+            <option>Resta</option>
+            <option>Multiplicación</option>
+            <option>Division</option>
+            <option>Modulo</option>
+        </select>
+        </p>
+        <p>
+            <input type="submit" name="button" id="button" value="Enviar" onclick="prueba"/>
+        </p>
     </form>
+    <p>&nbsp;</p>
 
-<?php
+    <?php
 
-    if (isset($_POST["enviado"])) {
-        $usuario = $_POST["nombre_usuario"];
-        $edad = $_POST["edad_usuario"];
+        if (isset($_POST["button"])) {
+            
+            $numero1 = $_POST["num1"];
+            $numero2 = $_POST["num2"];
+            $operacion = $_POST["operacion"];
 
-        if ($usuario =="Juan" && $edad >= 18) 
-        {
-            echo " <p class='validado'>Puedes entrar</p>";
+            if (!strcmp("Suma", $operacion)) {
+                
+                echo "El resultado es: " . ($numero1 + $numero2);
+            }
+            elseif(!strcmp("Resta", $operacion))
+            {
+                echo "El resultado es: " . ($numero1 - $numero2);
+            }
+            elseif(!strcmp("Multiplicación", $operacion))
+            {
+                echo "El resultado es: " . ($numero1 * $numero2);
+            }
+            elseif(!strcmp("Division", $operacion))
+            {
+                echo "El resultado es: " . ($numero1 / $numero2);
+            }
+            elseif(!strcmp("Modulo", $operacion))
+            {
+                echo "El resultado es: " . ($numero1 % $numero2);
+            }
         }
-        else
-        {
-            echo "<p class='no_validado'>No puedes entrar</p>";
-        }
-    }
-
-?>
-
-
-</body>
-</html>
