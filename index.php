@@ -1,67 +1,27 @@
-<style>
-    .resultado{
-        color: red;
-        font-weight: bold;
-        font-size: 32px;
-
-    }
-</style>
-
 <?php
+// Número aleatorio funcion matemática rand()
+$num1 = rand(10, 50);
 
-if (isset($_POST["button"])) {
+echo "El numro es: " . $num1 . "<br>";
 
-    $numero1 = $_POST["num1"];
-    $numero2 = $_POST["num2"];
-    $operacion = $_POST["operacion"];
-    Calcular($operacion);
-}
+// potencia de un numero función pow()
+$num2=pow(5,3);
+echo "El numro es: " . $num2 . "<br>";
 
-function Calcular($calculo){
-    if (!strcmp("Suma", $calculo)) 
-    {
-        global $numero1;
-        global $numero2;
+//redonder un valor numerico función round()
+$num3=5.7556454;
+echo "El numero es: " . round($num3, 2) . "<br>";
 
-        $resultado = ($numero1 + $numero2);
-        echo "<p class='resultado'>El resultado es: $resultado </p>";
-        
-    } elseif (!strcmp("Resta", $calculo)) {
-        global $numero1;
-        global $numero2;
+// PHP es de casting implicito es decir que no es necesario declarar el tipo de dato de la variable.
 
-        $resultado = ($numero1 - $numero2);
-        echo "<p class='resultado'>El resultado es: $resultado </p>";
-    } elseif (!strcmp("Multiplicación", $calculo)) {
-        global $numero1;
-        global $numero2;
+$num4 = "5";// PHP asume que es una variable de tipo string.
+$num4 = 2;// PHP asume que ahora $num4 es una variable de tipo.
+$num4 = 5.75; // PHP ahora asume que es una variable de tipo float.
+// esto se hace de manera implicita osea sin que te des cuenta, (automatico).
+// Tambien se puede realizar casting explicito osea indicar el tipo de dato que quieres
+//para esto debes colocar la dentro de parentesis el tipo de dato que quieres ejemplo:
+$resultado = (int)$num4;
 
-        $resultado = ($numero1 * $numero2);
-        echo "<p class='resultado'>El resultado es: $resultado </p>";
-    } elseif (!strcmp("Division", $calculo)) {
-        global $numero1;
-        global $numero2;
 
-        $resultado = ($numero1 / $numero2);
-        echo "<p class='resultado'>El resultado es: $resultado </p>";
-    } elseif (!strcmp("Modulo", $calculo)) {
-        global $numero1;
-        global $numero2;
 
-        $resultado = ($numero1 % $numero2);
-        echo "<p class='resultado'>El resultado es: $resultado </p>";
-    }elseif (!strcmp("Incremento", $calculo)) {
-        global $numero1;
-        $numero1 ++;
-
-        $resultado = $numero1;
-        echo "<p class='resultado'>El resultado es: $resultado </p>";
-    }elseif (!strcmp("Decremento", $calculo)) {
-        global $numero1;
-        $numero1 --;
-
-        $resultado = $numero1;
-        echo "<p class='resultado'>El resultado es: $resultado </p>";
-    }
-
-}
+?>
