@@ -50,6 +50,18 @@ function Calcular($calculo){
 
         $resultado = ($numero1 % $numero2);
         echo "<p class='resultado'>El resultado es: $resultado </p>";
+    }elseif (!strcmp("Incremento", $calculo)) {
+        global $numero1;
+        $numero1 ++;
+
+        $resultado = $numero1;
+        echo "<p class='resultado'>El resultado es: $resultado </p>";
+    }elseif (!strcmp("Decremento", $calculo)) {
+        global $numero1;
+        $numero1 --;
+
+        $resultado = $numero1;
+        echo "<p class='resultado'>El resultado es: $resultado </p>";
     }
 
 }

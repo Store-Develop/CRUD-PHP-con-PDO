@@ -21,6 +21,8 @@
           <option>Multiplicación</option>
           <option>Division</option>
           <option>Modulo</option>
+          <option>Incremento</option>
+          <option>Decremento</option>
         </select>
       </p>
       <p>
@@ -34,5 +36,20 @@
       </p>
     </form>
     <p>&nbsp;</p>
+<?php
+ include(index.php);
+
+ if (isset($_POST["button"])) {
+
+    $numero1 = $_POST["num1"];
+    $numero2 = $_POST["num2"];
+    $operacion = $_POST["operacion"];
+    Calcular($operacion);
+
+    
+}
+
+
+?>
   </body>
 </html>
