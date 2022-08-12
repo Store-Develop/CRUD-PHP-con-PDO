@@ -2,43 +2,39 @@
 
 //Funciones en PHP. 
 
-//Funciones pre definidas ejemplo;
+//Funciones con paso de parametros por valor y paso por referencia para paso por valor se pasa la variable normal
+//Ejemplo: function incrementa($valor1){} y por referencia se le agrega el (&) Ejemplo: function incrementa(&$valor1){}.
 
-$cadena = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga reiciendis eos asperiores unde nulla perferendis vel illo suscipit tempore. Iure nulla harum ullam atque eum voluptatibus, quisquam aperiam consectetur cum.";
+function incrementa(&$valor1){
+
+    $valor1 +=2;
+
+        return $valor1;
+}
+
+$numero=5;
+
+    echo incrementa($numero) . "<br>";
+
+    echo $numero . "<br>" . "<br>";
 
 
-    echo (strtolower($cadena)) . "<br>" . "<br>";// Convierte una cadena de texto, toda en minusculas.
-    echo (strtoupper($cadena)) . "<br>" . "<br>";// Convierte una cadena de texto, toda en MAYUSCULAS.
-    echo (ucwords($cadena)) . "<br>" . "<br>";// Convierte la primera letra de cada palabra en Mayuscula.
+function cambia_Mayus(&$param){
 
-// Funciones propias;
+    $param = strtolower($param);
 
-function Suma($num1, $num2){
+    $param= ucwords($param);
 
-    $resultado = $num1+$num2;
-
-    return $resultado;
+    return $param;
 
 }
 
-echo Suma(4, 5) . "<br>" . "<br>";
+$cadena = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum labore facilis neque, odit quia alias accusantium harum, accusamus corporis error autem odio minus. Ratione veniam velit possimus distinctio sapiente? Deleniti?";
 
-function frase_Mayusculas($frase, $conversion=false){
+echo cambia_Mayus($cadena) . "<br>" . "<br>";
 
-    $frase = strtolower($frase);
-
-    if ($conversion==true) {
-        $resultado=ucwords($frase);
+echo $cadena;
 
 
-    }else {
-        $resultado=strtoupper($frase);
-    }
-
-        return $resultado;
-
-}
-
-echo (frase_Mayusculas("Esto es una frase de prueba para ver como funcionan las funciones valga la redundancia en PHP ¡OK!"));
 
 ?>
