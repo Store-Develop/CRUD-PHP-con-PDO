@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,48 +8,32 @@
     <title>Calculadora HTML Y PHP</title>
   </head>
   <body>
-    <form nema="form1" method="POST" action="index.php">
-      <p>
-        <label for="num1"></label>
-        <input type="number" name="num1" id="num1" />
-        <label for="num2"></label>
-        <input type="number" name="num2" id="num2" />
-        <label for="operacion"></label>
-        <select name="operacion" id="operacion">
-          <option>Suma</option>
-          <option>Resta</option>
-          <option>Multiplicación</option>
-          <option>Division</option>
-          <option>Modulo</option>
-          <option>Incremento</option>
-          <option>Decremento</option>
-        </select>
-      </p>
-      <p>
-        <input
-          type="submit"
-          name="button"
-          id="button"
-          value="Enviar"
-          onclick="prueba"
-        />
-      </p>
+    <h1></h1>
+    <form action="index.php" method="POST" name="datos_usuario" id="datos_usuario">
+        <table width="15%" align="center">
+            <tr>
+                <td>Nombre:</td>
+                <td>
+                    <label for="nombre_usuario"></label>
+                    <input type="text" name="nombre_usuario" id="nombre_usuario">
+                </td>
+                
+            </tr>
+            <tr>
+            <td>Edad:</td>
+            <td>
+                    <label for="edad_usuario"></label>
+                    <input type="text" name="edad_usuario" id="edad_usuario">
+            </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2"  align="center"><input type="submit" name="enviado" id="enviado" value="Enviar"></td>
+            </tr>
+        </table>
     </form>
-    <p>&nbsp;</p>
-<?php
- include(index.php);
-
- if (isset($_POST["button"])) {
-
-    $numero1 = $_POST["num1"];
-    $numero2 = $_POST["num2"];
-    $operacion = $_POST["operacion"];
-    Calcular($operacion);
-
-    
-}
-
-
-?>
-  </body>
-</html>
+</body>
+</html> 
