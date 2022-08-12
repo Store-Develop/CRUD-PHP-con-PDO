@@ -1,19 +1,21 @@
 <?php
 
-//Condicionales uso IF
+//Operador ternario ?.
 
     if(isset($_POST["enviado"])){
-        $edad = $_POST["edad_usuario"];
+        $n_usuario = $_POST["n_usuario"];
+        $contraseña = $_POST["contra"];
 
-        if ($edad <= 17) {
-            echo "Eres Menos de edad";
-        }elseif ($edad >= 18 && $edad <=39 ) {
-            echo "Eres Joven";
-        }elseif ($edad >= 40 && $edad <=64 ) {
-            echo "Eres Maduro";
+        /*if ($edad < 18) {
+            echo "Eres Menos de edad. No tienes acceso";
         }else {
-            echo "¿qué espera que no has ido a cobrar el pago de la tercera edad? y ¡Cu&iacutedate!";
-        }
+            echo "Eres mayor de edad. Puedes acceder";
+        }*/
+
+        $acceso = $n_usuario=="Juan" && $contraseña == "1234" ? "¡¡¡Bienvenido!!!" : "Nombre de usuario o Contraseña incorrectos Por favor validar";
+
+        echo $acceso;
+
     }
 
 
