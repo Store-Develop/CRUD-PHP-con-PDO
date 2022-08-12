@@ -1,34 +1,44 @@
 <?php
 
-//Condicionales switch case.
+//Funciones en PHP. 
 
-if (isset($_POST["enviado"])) {
-    $n_usuario = $_POST["n_usuario"];
-    $contraseña = $_POST["contra"];
-    $perfil = $_POST["perfil"];
+//Funciones pre definidas ejemplo;
+
+$cadena = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga reiciendis eos asperiores unde nulla perferendis vel illo suscipit tempore. Iure nulla harum ullam atque eum voluptatibus, quisquam aperiam consectetur cum.";
 
 
-    switch ($perfil) {
-        case 'SAD' && $n_usuario == "Juan" && $contraseña == "J1c2":
-                echo "¡¡¡Bienvenido(a) Super Administrador del sistema!";
-            break;
-        case 'AD' && $n_usuario == "Sebastian" && $contraseña == "Aux1":
-            
-                echo "¡¡¡Bienvenido(a) Administrador del sistema!";
-            break;
-        case 'EN' && $n_usuario == "Alejandra" && $contraseña == "AprI":
+    echo (strtolower($cadena)) . "<br>" . "<br>";// Convierte una cadena de texto, toda en minusculas.
+    echo (strtoupper($cadena)) . "<br>" . "<br>";// Convierte una cadena de texto, toda en MAYUSCULAS.
+    echo (ucwords($cadena)) . "<br>" . "<br>";// Convierte la primera letra de cada palabra en Mayuscula.
 
-                echo "¡¡¡Bienvenido(a) Encargado del sistema!.";
-            break;
-        case 'E' && $n_usuario == "Mari" && $contraseña == "Sst1":
-       
-                echo "¡Bienvenido(a) Empleado de la compañia!";          
-            break;
-        case 'V' && $n_usuario == "VstEmp" && $contraseña == "Visitante#":
+// Funciones propias;
 
-                echo "¡Bienvenido(a) ha nuestro sistema sacale provecho!"; 
-            break;
-        default:
-        echo "Nombre de usuario o Contraseña incorrectos por favor validar.";
-    }
+function Suma($num1, $num2){
+
+    $resultado = $num1+$num2;
+
+    return $resultado;
+
 }
+
+echo Suma(4, 5) . "<br>" . "<br>";
+
+function frase_Mayusculas($frase, $conversion=false){
+
+    $frase = strtolower($frase);
+
+    if ($conversion==true) {
+        $resultado=ucwords($frase);
+
+
+    }else {
+        $resultado=strtoupper($frase);
+    }
+
+        return $resultado;
+
+}
+
+echo (frase_Mayusculas("Esto es una frase de prueba para ver como funcionan las funciones valga la redundancia en PHP ¡OK!"));
+
+?>
