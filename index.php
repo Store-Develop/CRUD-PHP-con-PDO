@@ -10,6 +10,8 @@ echo("El mazda tiene: " . $mazda->ruedas . " ruedas <br>");
 echo("El pegaso tiene: " . $pegaso->ruedas . " ruedas <br>");
 
 $mazda->establecer_Color("Negro", "Mazda");
-
+$pegaso->frenar();
+$pegaso->establecer_Color("Blanco", "Pegaso");
+$pegaso->arranca();
 
 ?>

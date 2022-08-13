@@ -46,11 +46,8 @@ function establecer_Color($color_Coche, $nombre_coche){
 //---------------------------------------------------------------------------------------------------------------------------------------
 
 
-class Camion{
-    //Atributos de una clase u objeto.
-    public $ruedas = 8;
-    public $color = "";
-    public $motor = 2600;
+class Camion extends Coche{
+    
 
     function Camion($ruedas, $color, $motor){// Método constructor de la clase
 
@@ -60,23 +57,19 @@ class Camion{
 
     }
 
-function arranca(){ // Métodos o funcionalidades de una clase u objeto.
+    function establecer_Color($color_Camion, $nombre_Camion){
 
-    echo "Estoy arrancando <br>";
+        $this->color=$color_Camion;
+    
+        echo "El " . $nombre_Camion ." es de color: " . $color_Camion . "<br>";
+    }
 
-}
+    function arranca()
+    {
+        parent::arranca();
 
-function girar(){
-
-    echo "Estoy girando <br>";
-
-}
-
-function frenar(){
-
-    echo "Estoy frenando <br>";
-
-}
+        echo "Camion arrancado";
+    }
 
 }
 
