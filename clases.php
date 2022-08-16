@@ -1,13 +1,13 @@
 <?php
  class Coche{
     //Atributos de una clase u objeto.
-    public $ruedas = 4;
+    private $ruedas;
     public $color = "";
-    public $motor = 2600;
+    public $motor = 1600;
 
-    function Camion($ruedas, $color, $motor){// Método constructor de la clase
+    function Camion($color, $motor){// Método constructor de la clase
 
-        $this->ruedas = $ruedas;
+        $this->ruedas = 4;
         $this->color=$color;
         $this->motor= $motor;
 
@@ -47,11 +47,13 @@ function establecer_Color($color_Coche, $nombre_coche){
 
 
 class Camion extends Coche{
-    
+    private $ruedas;
+    public $color = "";
+    public $motor = 1600;
 
-    function Camion($ruedas, $color, $motor){// Método constructor de la clase
+    function Camion($color, $motor){// Método constructor de la clase
 
-        $this->ruedas = $ruedas;
+        $this->ruedas=8;
         $this->color=$color;
         $this->motor= $motor;
 
@@ -70,6 +72,8 @@ class Camion extends Coche{
 
         echo "Camion arrancado";
     }
+
+    
 
 }
 
