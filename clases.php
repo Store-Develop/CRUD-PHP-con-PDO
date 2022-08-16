@@ -1,13 +1,13 @@
 <?php
  class Coche{
     //Atributos de una clase u objeto.
-    protected $ruedas = 4;
-    private $color = "";
-    protected $motor = 1600;
+    private $ruedas;
+    public $color = "";
+    public $motor = 1600;
 
-    function Camion($ruedas, $color, $motor){// Método constructor de la clase
+    function Camion($color, $motor){// Método constructor de la clase
 
-        $this->ruedas = $ruedas;
+        $this->ruedas = 4;
         $this->color=$color;
         $this->motor= $motor;
 
@@ -27,37 +27,17 @@ function girar(){
 }
 
 function frenar(){
-    
+
     echo "Estoy frenando <br>";
-    
+
 }
 
-function get_Ruedas(){
-    return $this->ruedas;
-}
-
-function get_Color(){
-    return $this->color;
-}
-
-function set_Color($color_Coche, $nombre_coche){
+function establecer_Color($color_Coche, $nombre_coche){
 
     $this->color=$color_Coche;
 
     echo "El " . $nombre_coche ." es de color: " . $color_Coche . "<br>";
 }
-
-function get_Motor(){
-
-    return $this->motor;
-}
-
-function set_Motor($motor){
-
-    $this->motor=$motor;
-
-}
-
 
 }
 
@@ -67,11 +47,11 @@ function set_Motor($motor){
 
 
 class Camion extends Coche{
-    protected $ruedas = 8;
-    private $color = "";
-    protected $motor = 2600;
+    private $ruedas;
+    public $color = "";
+    public $motor = 1600;
 
-    function Camion($ruedas, $color, $motor){// Método constructor de la clase
+    function Camion($color, $motor){// Método constructor de la clase
 
         $this->ruedas=8;
         $this->color=$color;
@@ -79,7 +59,7 @@ class Camion extends Coche{
 
     }
 
-    function set_Color($color_Camion, $nombre_Camion){
+    function establecer_Color($color_Camion, $nombre_Camion){
 
         $this->color=$color_Camion;
     
@@ -92,12 +72,6 @@ class Camion extends Coche{
 
         echo "Camion arrancado";
     }
-
-    function get_Ruedas(){
-        return $this->ruedas;
-    }
-    
-    
 
     
 
