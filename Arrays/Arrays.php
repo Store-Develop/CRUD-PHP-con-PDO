@@ -11,22 +11,22 @@
 
     //ARREYS INDEXADOS.
     //Forma 1 para declarar un array.
-    $semana[]="Lunes";
+    /*$semana[]="Lunes";
     $semana[]="Martes";
     $semana[]="Miércoles";
-    $semana[]="Jueves";
+    $semana[]="Jueves";*/
 
     //Agregar un elemento a un Array indexado.
     //$semana[]="Viernes";
 
     //Ordenar los datos de un array con la función predeterminada sort();
-    sort($semana);
+    //sort($semana);
 
     //Recorrer un Array indexado con for.
-    for ($i=0; $i< count($semana); $i++) { 
+    /*for ($i=0; $i< count($semana); $i++) { 
 
         echo $semana[$i] . "<br>";
-    }
+    }*/
 
    //Forma 2 para declarar un array.
     /*$semana=array("Lunes", "Martes", "Miércoles", "Jueves");
@@ -62,6 +62,24 @@
 
     }*/
 
+    //------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------------------
+
+    //ARRAYS MULTIDIMENCIONALES.
+
+    $alimentos=array("fruta"=>array("tropical"=>"kiwi",
+                                    "citrico" => "mandarina",
+                                    "otros" => "manzana"), 
+
+                     "leche" =>array("animal" =>"vaca",
+                                     "vegetal" => "coco"),
+
+                     "carne" =>array("vacuno"=>"lomo",
+                                     "porcino" => "pata"));
+
+        //echo $alimentos["carne"] ["vacuno"];
+
+         echo print_r($alimentos);
 ?>
 </body>
 </html>
