@@ -10,22 +10,57 @@
     <?php
 
     //ARREYS INDEXADOS.
-//Forma 1 para declarar un array.
-    /*$semana[0]="Lunes";
-    $semana[1]="Martes";
-    $semana[2]="Miércoles";
+    //Forma 1 para declarar un array.
+    $semana[]="Lunes";
+    $semana[]="Martes";
+    $semana[]="Miércoles";
+    $semana[]="Jueves";
 
-    echo $semana[0];*/
+    //Agregar un elemento a un Array indexado.
+    //$semana[]="Viernes";
+
+    //Ordenar los datos de un array con la función predeterminada sort();
+    sort($semana);
+
+    //Recorrer un Array indexado con for.
+    for ($i=0; $i< count($semana); $i++) { 
+
+        echo $semana[$i] . "<br>";
+    }
 
    //Forma 2 para declarar un array.
-    $semana=array("Lunes", "Martes", "Miércoles", "Jueves");
-    echo $semana[3] . "<br>";
+    /*$semana=array("Lunes", "Martes", "Miércoles", "Jueves");
+    echo $semana[3] . "<br>";*/
+
+//---------------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------------
 
     //ARREYS ASOCIATIVOS.
 
-    $datos=array("Nombre"=>"Juan", "Apellido"=>"Pérez", "Edad"=>24);
+    //$datos=array("Nombre"=>"Juan", "Apellido"=>"Pérez", "Edad"=>24);
+    //$datos="Martín";
+    //echo $datos["Nombre"] . "<br>"; 
 
-    echo $datos["Nombre"] . "<br>";
+    //Función pre definida is_array para validar si un nombre es un Array o una Variable.
+
+    /*if (is_array($datos)) {
+        
+        echo "Es un Array.";
+    }
+    else{
+        echo "No es un Array.";
+    }*/
+
+    //Agregar un elemento mas a un array asociativo.
+
+    //$datos["Pais"] = "Colombia";
+
+    //Forma de recorrer un array asociativo.
+    /*foreach ($datos as $clave => $valor) {
+        
+        echo "A $clave le corresponde $valor <br>";
+
+    }*/
 
 ?>
 </body>
