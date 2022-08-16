@@ -4,7 +4,7 @@ class Compra_Vehiculo
 {
 
     private $precio_Base;
-    static $ayuda = 4500;
+    private static $ayuda =0;
 
     function Compra_Vehiculo($gama)
     {
@@ -20,6 +20,14 @@ class Compra_Vehiculo
         }
     }
 
+    static function descuento_Govierno(){
+
+        if (date("m-d-y")>"09-01-15") {
+            
+            self::$ayuda= 4500;
+
+        }        
+    }
 
     /*function get_Gama_Vehiculo(){
         return $this->gama;

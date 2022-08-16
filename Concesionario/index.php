@@ -12,6 +12,8 @@
     <?php
     include("concesionario.php");
 
+
+    Compra_Vehiculo::descuento_Govierno();
     $compra_Antonio = new Compra_Vehiculo();
      $compra_Antonio->tapiceria_Cuero("rojo");
      $compra_Antonio->navegador_Gps();
