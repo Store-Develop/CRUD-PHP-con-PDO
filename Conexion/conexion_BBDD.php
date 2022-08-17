@@ -10,22 +10,41 @@
 <?php
     //conexion por procedimiento.
     $db_host="localhost";
-    $db_nombre="TU_BASE DE DATOS";
-    $db_usuario="TU_USUARIO";
+    $db_nombre="TU_BBDD";
+    $db_usuario="TU_USUSARIO";
     $db_contraseña="TU_CONTRASEÑA";
 
-    $conexion=mysqli_connect($db_host,$db_usuario,$db_contraseña,$db_nombre);
+    $conexion=mysqli_connect($db_host,$db_usuario,$db_contraseña);
+
+    //Si no podemos realizar la conexion con la base de datos por algun motivo capturamos el error y le decimos que haga algo.
+    /*if (mysqli_connect_errno()) {
+       echo "Conexión con BBDD fallida por favor verificar.";
+
+       exit();
+    }*/
+
+    // podemos especificar la DB aparte de la linea de conexión si no conecta enviamos un mensaje de error.
+    mysqli_select_db($conexion,$db_nombre) or die ("No se encuentra la BBDD");
+    //cotejamiento para que acepte caracteres especiales.
+    mysqli_set_charset($conexion, "utf8");
+
     //consulta a base de datos.
     $consulta="SELECT * FROM DATOSPERSONALES";
 
     $rst=mysqli_query($conexion, $consulta);
     // recorremos y almacenamos en un array la info obtenida.
-    $datos=mysqli_fetch_row($rst);
 
-    echo "ID: " . $datos[0] . ".<br>";
-    echo "Nombre: " . $datos[1] . ".<br>";
-    echo "Apellido: " . $datos[2] . ".<br>";
-    echo "Edad: " . $datos[3] . ".<br>";
+    while ($datos=mysqli_fetch_row($rst)) {
+    
+        echo "ID: " . $datos[0] . " ";
+        echo "Nombre: " . $datos[1] . " ";
+        echo "Apellido: " . $datos[2] . " ";
+        echo "Edad: " . $datos[3] . " ";
+        echo "<br>";
+
+}
+//cerramos la conexion.
+mysqli_close($conexion);
 
 
 ?>
