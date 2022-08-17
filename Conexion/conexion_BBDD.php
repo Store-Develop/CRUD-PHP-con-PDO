@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/Style.css" type="text/css" />
     <title>Document</title>
 </head>
 <body>
 <?php
     //conexion por procedimiento.
-    $db_host="localhost";
-    $db_nombre="TU_BBDD";
-    $db_usuario="TU_USUSARIO";
-    $db_contraseña="TU_CONTRASEÑA";
+    require("datos_C.php");
+
 
     $conexion=mysqli_connect($db_host,$db_usuario,$db_contraseña);
 
@@ -29,21 +28,22 @@
     mysqli_set_charset($conexion, "utf8");
 
     //consulta a base de datos.
-    $consulta="SELECT * FROM DATOSPERSONALES";
+    $consulta="SELECT * FROM DATOSPERSONALES WHERE EDAD=23";
 
     $rst=mysqli_query($conexion, $consulta);
     // recorremos y almacenamos en un array la info obtenida.
 
     while ($datos=mysqli_fetch_row($rst)) {
-    
-        echo "ID: " . $datos[0] . " ";
-        echo "Nombre: " . $datos[1] . " ";
-        echo "Apellido: " . $datos[2] . " ";
-        echo "Edad: " . $datos[3] . " ";
+    echo "<table class='tabla'><tr><td>";
+        echo "ID: " . $datos[0] . "</td><td>";
+        echo "Nombre: " . $datos[1] . "</td><td>";
+        echo "Apellido: " . $datos[2] . "</td><td>";
+        echo "Edad: " . $datos[3] . "</td><td></tr></table>";
         echo "<br>";
+      
 
 }
-//cerramos la conexion.
+
 mysqli_close($conexion);
 
 
