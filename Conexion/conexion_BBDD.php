@@ -28,17 +28,17 @@
     mysqli_set_charset($conexion, "utf8");
 
     //consulta a base de datos.
-    $consulta="SELECT * FROM DATOSPERSONALES WHERE EDAD=23";
+    $consulta="SELECT * FROM DATOSPERSONALES";
 
     $rst=mysqli_query($conexion, $consulta);
     // recorremos y almacenamos en un array la info obtenida.
 
-    while ($datos=mysqli_fetch_row($rst)) {
+    while ($datos=mysqli_fetch_array($rst, MYSQLI_ASSOC)) {
     echo "<table class='tabla'><tr><td>";
-        echo "ID: " . $datos[0] . "</td><td>";
-        echo "Nombre: " . $datos[1] . "</td><td>";
-        echo "Apellido: " . $datos[2] . "</td><td>";
-        echo "Edad: " . $datos[3] . "</td><td></tr></table>";
+        echo "ID: " . $datos["ID"] . "</td><td>";
+        echo "Nombre: " . $datos["NOMBRE"] . "</td><td>";
+        echo "Apellido: " . $datos["APELLIDO"] . "</td><td>";
+        echo "Edad: " . $datos["EDAD"] . "</td><td></tr></table>";
         echo "<br>";
       
 
