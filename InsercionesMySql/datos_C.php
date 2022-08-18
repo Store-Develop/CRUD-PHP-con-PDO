@@ -1,8 +1,8 @@
 <?php
 
 $db_host="localhost";
-$db_nombre="TU_BD";
-$db_usuario="TU_USUARIO";
-$db_contraseña="TU_CONTRASEÑA";
+$db_nombre="pruebas1";
+$db_usuario="root";
+$db_contraseña="";
 
 ?>

@@ -9,8 +9,8 @@
    
 </head>
 <body>
-    <h1>Registro de Personal</h1>
-    <form name="form1" method="get" action="index.php">
+    <h1>Eliminar Personal</h1>
+    <form name="form1" method="get" action="eliminar_Registro.php">
 
     <table border="0" align="center">
         <tr>
@@ -55,7 +55,7 @@
         </tr>
 
         <tr>
-            <td align="center"> <input type="submit" name="enviar" id="enviar" value="Enviar"/></td>
+            <td align="center"> <input type="submit" name="enviar" id="enviar" value="Eliminar"/></td>
             <td align="center"> <input type="reset" name="borrar" id="borrar" value="Borrar"/></td>
         </tr>
         
