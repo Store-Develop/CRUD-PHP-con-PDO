@@ -1,7 +1,7 @@
 <?php
 
 $db_host="localhost";
-$db_nombre="pruebas1";
+$db_nombre="TU_DB";
 $db_usuario="root";
 $db_contraseña="";
 
