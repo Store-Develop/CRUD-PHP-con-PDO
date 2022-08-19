@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="./css/Style.css" type="text/css" />-->
     <title>Document</title>
+</head>
+<body>
+<?php
 
-    <?php
-    function ejecuta_Consulta($labusqueda){
     
     require("datos_C.php");
+
+    $user = $_GET["usuario"];
+    $password = $_GET["contra"];
+
 
     $conexion=mysqli_connect($db_host,$db_usuario,$db_contraseña);
 
@@ -26,20 +32,23 @@
     mysqli_set_charset($conexion, "utf8");
 
     //consulta a base de datos.
-    $consulta="SELECT * FROM PERSONAL WHERE Departamento LIKE '%$labusqueda%'";
+    //$consulta="SELECT * FROM PERSONAL WHERE Departamento LIKE '%$busqueda%'";
+    $consulta="SELECT * FROM usuarios WHERE  Usuario= '$user' AND Contraseña= '$password'";
+
+    echo "$consulta <br><br>";
 
     $rst=mysqli_query($conexion, $consulta);
     // recorremos y almacenamos en un array la info obtenida.
 
     while ($datos=mysqli_fetch_array($rst, MYSQLI_ASSOC)) {
-    echo "<table class='tabla'><tr><td>";
-        echo "ID: " . $datos["Matrícula"] . "</td><td>";
-        echo "Nombre: " . $datos["Nombre"] . "</td><td>";
-        echo "Apellido: " . $datos["Apellido"] . "</td><td>";
-        echo "Categoría: " . $datos["Categoría"] . "</td><td>";
-        echo "Departamento: " . $datos["Departamento"] . "</td><td>";
-        echo "Salario: " . $datos["Salario"] . "</td><td>";
-        echo "Fecha ingreso: " . $datos["Fecha ingreso"] . "</td><td></tr></table>";
+
+        echo "Bienvenido $user <br>";
+        echo "Estos son tus datos: <br>";
+        echo "<table class='tabla'><tr><td>";
+        echo "USUARIO: " . $datos["Usuario"] . "</td><td>";
+        echo "CONTRASEÑA: " . $datos["Contraseña"] . "</td><td>";
+        echo "TELEFONO: " . $datos["telefono"] . "</td><td>";
+        echo "DIRECCIÓN: " . $datos["Direccion"] . "</td><td></tr></table>";
         echo "<br>";
       
 
@@ -47,26 +56,7 @@
 
 mysqli_close($conexion);
 
-}
+
 ?>
-</head>
-<body>
-    <?php
-
-    $mibusqueda=$_GET["buscar"];
-
-    $mipage=$_SERVER["PHP_SELF"];
-
-    if ($mibusqueda !=NULL) {
-        ejecuta_Consulta($mibusqueda);
-    }else {
-        echo("<form action='" . $mipage . "' method='get'> 
-        <label>Buscar: <input type='text' name='buscar'/></label>
-        <input type='submit' name='enviando' value='ENVIAR'/>
-        </form>");
-    }
-
-
-    ?>
 </body>
 </html>

@@ -13,7 +13,8 @@
     
     require("datos_C.php");
 
-    $busqueda = $_GET["buscar"];
+    $user = $_GET["usuario"];
+    $password = $_GET["contra"];
 
 
     $conexion=mysqli_connect($db_host,$db_usuario,$db_contraseña);
@@ -32,25 +33,29 @@
 
     //consulta a base de datos.
     //$consulta="SELECT * FROM PERSONAL WHERE Departamento LIKE '%$busqueda%'";
-    $consulta="SELECT * FROM PERSONAL WHERE Departamento = '$busqueda'";
+    $consulta="DELETE FROM usuarios WHERE  Usuario= '$user' AND Contraseña= '$password'";
 
     echo "$consulta <br><br>";
 
-    $rst=mysqli_query($conexion, $consulta);
+    if(mysqli_query($conexion, $consulta));{
+
+        echo "Baja Procesada";
+    }
     // recorremos y almacenamos en un array la info obtenida.
 
-    while ($datos=mysqli_fetch_array($rst, MYSQLI_ASSOC)) {
-    echo "<table class='tabla'><tr><td>";
-        echo "ID: " . $datos["Matrícula"] . "</td><td>";
-        echo "Nombre: " . $datos["Nombre"] . "</td><td>";
-        echo "Apellido: " . $datos["Apellido"] . "</td><td>";
-        echo "Cargo: " . $datos["Cargo"] . "</td><td>";
-        echo "Departamento: " . $datos["Departamento"] . "</td><td>";
-        echo "Salario: " . $datos["Salario"] . "</td><td></tr></table>";
+    /* ($datos=mysqli_fetch_array($rst, MYSQLI_ASSOC)) {
+
+        echo "Bienvenido $user <br>";
+        echo "Estos son tus datos: <br>";
+        echo "<table class='tabla'><tr><td>";
+        echo "USUARIO: " . $datos["Usuario"] . "</td><td>";
+        echo "CONTRASEÑA: " . $datos["Contraseña"] . "</td><td>";
+        echo "TELEFONO: " . $datos["telefono"] . "</td><td>";
+        echo "DIRECCIÓN: " . $datos["Direccion"] . "</td><td></tr></table>";
         echo "<br>";
       
 
-}
+}*/
 
 mysqli_close($conexion);
 
