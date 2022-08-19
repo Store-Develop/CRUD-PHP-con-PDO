@@ -13,11 +13,13 @@
     
     require("datos_C.php");
 
-    $user = $_GET["usuario"];
-    $password = $_GET["contra"];
+    
 
 
     $conexion=mysqli_connect($db_host,$db_usuario,$db_contraseña);
+
+    $user = mysqli_real_escape_string($conexion, $_GET["usuario"]);
+    $password = mysqli_real_escape_string($conexion, $_GET["contra"]);
 
     //Si no podemos realizar la conexion con la base de datos por algun motivo capturamos el error y le decimos que haga algo.
     /*if (mysqli_connect_errno()) {
@@ -37,10 +39,25 @@
 
     echo "$consulta <br><br>";
 
-    if(mysqli_query($conexion, $consulta));{
+    /*if(mysqli_query($conexion, $consulta));{
 
         echo "Baja Procesada";
+    }*/
+    //Ejecutamos la consulta   
+    mysqli_query($conexion, $consulta);
+
+    //Vemos si hay filas afectadas y actuamos dependiendo dé.
+    if (mysqli_affected_rows($conexion)>0) {
+        
+        echo "Baja Procesada"; 
+        
+    }else {
+        
+        echo "Información ERRONEA validar. ";
+
     }
+
+
     // recorremos y almacenamos en un array la info obtenida.
 
     /* ($datos=mysqli_fetch_array($rst, MYSQLI_ASSOC)) {
