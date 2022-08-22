@@ -44,9 +44,7 @@
             echo "Departamento: " . $datos["Departamento"] . "</td><td>";
             echo "Salario: " . $datos["Salario"] . "</td><td></tr></table>";
             echo "<br>";
-
-            echo "<br>";
-            echo "<br>";
+    
         }
         //procedimental.
         //mysqli_close($conexion);
