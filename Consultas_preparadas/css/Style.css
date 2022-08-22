@@ -1,6 +1,24 @@
-.tabla{
-    width: 75%;
-    border: 1px dotted#ff0000;
+h1{
+    text-align: center;
+    color: #00f;
+    border-bottom: dotted#ff0000;
+    width: 50%;
     margin: auto;
-    font-family:Arial, Helvetica, sans-serif;
 }
+
+table{
+    border: 1px solid #f00;
+    padding: 20px 50px;
+    margin-top: 50px;
+}
+
+body{
+    background-color: #ffc;
+}
+
+.Tlabel{
+    color: #00f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
