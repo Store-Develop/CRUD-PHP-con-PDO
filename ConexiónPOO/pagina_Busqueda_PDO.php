@@ -14,7 +14,7 @@
         $busqueda_Area=$_POST["area"];
 
         try {
-            $conexion= new PDO('mysql:host=localhost; dbname=pruebas1', 'root', '');
+            $conexion= new PDO('mysql:host=localhost; dbname=pruebas10', 'root', '');
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $conexion->exec("SET CHARACTER SET utf8");
 
@@ -40,7 +40,7 @@
     die('Error: ' . $e->getMessage());
 }finally{
 
-    $conexion=null;
+    $conexion=null; 
 }
         
     ?>
