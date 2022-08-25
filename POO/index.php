@@ -1,9 +1,11 @@
 <?php
 
 require ("devuelve_Datos.php");
+
+$persona =$_POST["buscar"];
  $datos=new DevuelveDatos();
 
- $listaDatos = $datos->getDatos();
+ $listaDatos = $datos->getDatos($persona);
 
 ?>
 
