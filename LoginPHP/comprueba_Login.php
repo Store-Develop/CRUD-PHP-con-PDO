@@ -30,8 +30,12 @@
         $p_Exito= $rst->rowCount();
 
         if ($p_Exito !=0) {
-            
-            echo "<h2> Bienvenido puedes continuar </h2>";
+
+            session_start();
+
+            $_SESSION["usuario"]= $_POST["login"];
+                        
+            header("location:usuarios_Registrados_Uno.php");
 
         }else {
 
