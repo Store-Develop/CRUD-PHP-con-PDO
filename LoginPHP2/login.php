@@ -57,7 +57,7 @@
     <?php
 
     if (!isset($_SESSION["usuario"])) {
-        include("./formulario.html");
+        include("formulario.php");
     }else{
         echo "Usuario: " . $_SESSION["usuario"];
     }
