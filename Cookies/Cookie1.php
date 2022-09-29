@@ -9,9 +9,8 @@
 <body>
 
 <?php
-
-    setcookie("prueba", "Esta es la información de nuestra primera cookie");
-
+// Creación de Cookies por medio de setcookie(nombreCookie, Valor, tiempoDuración, ruta donde actua,)
+    setcookie("prueba", "Esta es la información de nuestra primera cookie",time()+300,"localhost/PHP_PildoresI/Cookies/zona_contenido");
 
 ?>
     
