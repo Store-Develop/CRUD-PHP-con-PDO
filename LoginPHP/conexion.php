@@ -17,7 +17,7 @@ class Conexion
             $this->conect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $e) {
             $this->conect = "Error de conexión";
-            echo "ERROR: " . $e->getMessage();
+            echo "ERROR: " . $e->getLine();
         }
     }
 
